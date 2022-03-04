@@ -4,12 +4,15 @@ import Context from "./Context";
 
 function Provider({ children }) {
   const [user, setUser] = useState({});
+  const [data, setData] = useState({});
 
   return (
     <Context.Provider
       value={{
         user,
         setUser,
+        data,
+        setData,
       }}
     >
       {children}

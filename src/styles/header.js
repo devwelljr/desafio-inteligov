@@ -1,6 +1,9 @@
-import styled from 'styled-component';
+import styled from "styled-components";
 
 export default styled.header`
-  min-width: 100%;
+  background-color: #019973;
+  display: flexbox;
+  padding: 10px;
   max-height: 10%;
-`
+  min-width: 100%;
+`;

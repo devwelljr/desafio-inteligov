@@ -8,7 +8,7 @@ function Header() {
   return (
     <ContainerHeader>
       <div>
-        <h1>{ user ? `Tabela de ${user.user}` : 'Nome do usuario' }</h1>
+        <h1>{ user.user ? `Tabela de ${user.user}` : 'Tabela do usuario' }</h1>
       </div>
     </ContainerHeader>
   );
