@@ -2,24 +2,25 @@ import styled from "styled-components";
 
 export default styled.section`
   background-color: #000639;
-  border: 2px dashed #000639;
   border-radius: 20px;
   color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 10px;
-  max-width: 40%;
-
+  max-height: 20%;
+  min-width: 40%;
 
   .drop-file-input {
     align-items: center;
     background-color: #000639;
+    border-radius: 20px;
     display: flex;
     height: 200px;
     justify-content: center;
     position: relative;
-    width: 400px;
+    max-height: 20%;
+    width: 100%;
   }
 
   .drop-file-input input {
@@ -44,7 +45,7 @@ export default styled.section`
   }
 
   .drop-file-input__label img {
-    width: 100px;
+    max-width: 130px;
   }
 
   .drop-file-preview {
@@ -68,7 +69,7 @@ export default styled.section`
 
   .drop-file-preview__item img {
     margin-right: 20px;
-    width: 50px;
+    width: 70px;
   }
 
   .drop-file-preview__item__info {

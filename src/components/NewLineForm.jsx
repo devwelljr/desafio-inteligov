@@ -18,7 +18,7 @@ function NewLineForm() {
   }
 
   return (
-    <div>
+    <div style={{ margin: '10px' }}>
       {data[0].map((category, index) => (
         <input
           key={index}

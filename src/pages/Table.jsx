@@ -21,8 +21,8 @@ function MyTable() {
         return arr;
       }
     });
-    const a = [header, ...updateData];
-    setData(a);
+    const dataUpdated = [header, ...updateData];
+    setData(dataUpdated);
   };
 
   /* Funcao que gera linhas */
