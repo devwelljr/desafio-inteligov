@@ -28,13 +28,14 @@ function MyTable() {
   /* Funcao que gera linhas */
   const generate = (array, index) => {
     return (
-      <tr key={index}>
+      <tr key={index} style={{ borderWidth: "0px" }}>
         {array.map((content, index) => (
           <th key={index}>{content}</th>
         ))}
         <button
           className='drop-file-preview__item__del'
           onClick={(event) => deleteLine(event)}
+          style={{ border: "0px" }}
         >
           x
         </button>
@@ -52,13 +53,13 @@ function MyTable() {
           <>
             <Table striped bordered hover variant='dark'>
               <thead>
-                <tr>
+                <tr style={{ borderWidth: "0px" }}>
                   {data[0].map((column, index) => (
                     <th key={index}>{column}</th>
                   ))}
                 </tr>
               </thead>
-              <tbody>
+              <tbody style={{ borderTop: "0px" }}>
                 {data.slice(1).map((array, index) => generate(array, index))}
               </tbody>
             </Table>

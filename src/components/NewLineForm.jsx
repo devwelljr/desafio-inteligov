@@ -15,10 +15,11 @@ function NewLineForm() {
   const handleSubmit = () => {
     const arrayNewLine = Object.values(newLine);
     setData([...data, arrayNewLine]);
-  }
+  };
 
   return (
-    <div style={{ margin: '10px' }}>
+    <div style={{ margin: "10px" }}>
+      <h2 className='text-muted'>Adicione uma nova linha a tabela aqui:</h2>
       {data[0].map((category, index) => (
         <input
           key={index}
@@ -28,7 +29,11 @@ function NewLineForm() {
           value={newLine[category]}
         />
       ))}
-      <button type='submit' className='btn btn-outline-dark' onClick={handleSubmit}>
+      <button
+        type='submit'
+        className='btn btn-outline-dark'
+        onClick={handleSubmit}
+      >
         Criar nova linha
       </button>
     </div>
