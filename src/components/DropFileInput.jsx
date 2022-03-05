@@ -37,6 +37,7 @@ function DropFileInput() {
   /* Logica para remocao das infos do arquivo */
   const fileRemove = () => {
     setFile({});
+    setData([]);
   };
 
   return (

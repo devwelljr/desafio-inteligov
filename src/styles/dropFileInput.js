@@ -1,37 +1,35 @@
 import styled from "styled-components";
 
 export default styled.section`
-  align-self: center;
+  background-color: #000639;
+  border: 2px dashed #000639;
+  border-radius: 20px;
+  color: white;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  border: 1px solid #019973;
+  justify-content: center;
+  margin: 10px;
+  max-width: 40%;
 
-  max-width: 400px;
-  margin: 0;
 
   .drop-file-input {
+    align-items: center;
+    background-color: #000639;
+    display: flex;
+    height: 200px;
+    justify-content: center;
     position: relative;
     width: 400px;
-    height: 200px;
-    border: 2px dashed var(--border-color);
-    border-radius: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: var(--input-bg);
   }
 
   .drop-file-input input {
+    cursor: pointer;
+    left: 0;
+    height: 100%;
     opacity: 0;
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    cursor: pointer;
   }
 
   .drop-file-input:hover,
@@ -41,7 +39,6 @@ export default styled.section`
 
   .drop-file-input__label {
     text-align: center;
-    color: var(--txt-second-color);
     font-weight: 600;
     padding: 10px;
   }
@@ -51,8 +48,8 @@ export default styled.section`
   }
 
   .drop-file-preview {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     min-width: 100%;
   }
@@ -62,17 +59,16 @@ export default styled.section`
   }
 
   .drop-file-preview__item {
-    position: relative;
-    display: flex;
-    margin-bottom: 10px;
-    background-color: var(--input-bg);
-    padding: 15px;
     border-radius: 20px;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 10px;
   }
 
   .drop-file-preview__item img {
-    width: 50px;
     margin-right: 20px;
+    width: 50px;
   }
 
   .drop-file-preview__item__info {
@@ -82,12 +78,12 @@ export default styled.section`
   }
 
   .drop-file-preview__item__del {
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
-    display: flex;
-    position: absolute;
     cursor: pointer;
+    display: flex;
+    height: 50px;
+    position: absolute;
+    width: 50px;
   }
 
   .drop-file-preview__item:hover .drop-file-preview__item__del {

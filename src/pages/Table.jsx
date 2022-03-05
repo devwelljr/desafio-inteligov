@@ -3,45 +3,66 @@ import Table from "react-bootstrap/Table";
 import Context from "../context/Context";
 
 import Header from "../components/Header";
+import NewLineForm from "../components/NewLineForm";
 import DropFileInput from "../components/DropFileInput";
 
 import ContainerTable from "../styles/table";
 
 function MyTable() {
-  const { data } = useContext(Context);
+  const { data, setData } = useContext(Context);
+
+  /* Funcao deletar linha */
+  const deleteLine = (event) => {
+    const elementRemove = event.target.parentNode.firstChild.textContent;
+    const header = data[0];
+    const newData = data.slice(1);
+    const updateData = newData.filter((arr) => {
+      if (Number(arr[0]) !== Number(elementRemove)) {
+        return arr;
+      }
+    });
+    const a = [header, ...updateData];
+    setData(a);
+  };
+
+  /* Funcao que gera linhas */
+  const generate = (array, index) => {
+    return (
+      <tr key={index}>
+        {array.map((content, index) => (
+          <th key={index}>{content}</th>
+        ))}
+        <button
+          className='drop-file-preview__item__del'
+          onClick={(event) => deleteLine(event)}
+        >
+          x
+        </button>
+      </tr>
+    );
+  };
 
   return (
     <>
       <Header />
       <DropFileInput />
+      {data.length > 0 ? <NewLineForm /> : null}
       <ContainerTable>
         {data.length > 0 ? (
-          <Table striped bordered hover variant='dark'>
-            <thead>
-              <tr>
-                {data[0].map((column, index) => (
-                  <th key={index}>{column}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                {data[1].map((id, index) => (
-                  <th key={index}>{id}</th>
-                ))}
-              </tr>
-              <tr>
-                {data[2].map((name, index) => (
-                  <th key={index}>{name}</th>
-                ))}
-              </tr>
-              <tr>
-                {data[3].map((phone, index) => (
-                  <th key={index}>{phone}</th>
-                ))}
-              </tr>
-            </tbody>
-          </Table>
+          <>
+            <Table striped bordered hover variant='dark'>
+              <thead>
+                <tr>
+                  {data[0].map((column, index) => (
+                    <th key={index}>{column}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {data.slice(1).map((array, index) => generate(array, index))}
+              </tbody>
+            </Table>
+          </>
         ) : null}
       </ContainerTable>
     </>
