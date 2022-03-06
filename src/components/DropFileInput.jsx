@@ -7,10 +7,11 @@ import csvImg from "../images/csv_icon.png";
 import ContainerDropFileInput from "../styles/dropFileInput";
 
 import Papa from "papaparse";
+import { saveAs } from "file-saver";
 
 function DropFileInput() {
   const wrapperRef = useRef(null);
-  const { setData } = useContext(Context);
+  const { data, setData } = useContext(Context);
   const [file, setFile] = useState({});
 
   /* Adiociona classe ao arrastar arquivo */
@@ -27,7 +28,9 @@ function DropFileInput() {
     const newFile = e.target.files[0];
     const typeFile = newFile.name.split(".")[1];
 
-    Papa.parse(e.target.files[0], { complete: (results) => setData(results.data) });
+    Papa.parse(e.target.files[0], {
+      complete: (results) => setData(results.data),
+    });
 
     if (typeFile == "csv") {
       setFile({ name: newFile.name, size: newFile.size, type: newFile.type });
@@ -38,6 +41,14 @@ function DropFileInput() {
   const fileRemove = () => {
     setFile({});
     setData([]);
+  };
+
+  /* Logica para download do arquivo */
+  const fileDownload = () => {
+    return saveAs(
+      new Blob([data], { type: "text/csv;charset=utf-8;" }),
+      file.name
+    );
   };
 
   return (
@@ -70,6 +81,14 @@ function DropFileInput() {
               x
             </span>
           </div>
+          <button
+            className='btn btn-outline-light'
+            target='_blank'
+            onClick={() => fileDownload()}
+            download
+          >
+            Download Table
+          </button>
         </div>
       ) : null}
     </ContainerDropFileInput>

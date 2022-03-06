@@ -18,7 +18,9 @@ function NewLineForm() {
   };
 
   return (
-    <div style={{ margin: "10px" }}>
+    <div style={{ margin: "10px", textAlign: "center" }}>
+      <br />
+      <hr />
       <h2 className='text-muted'>Adicione uma nova linha a tabela aqui:</h2>
       {data[0].map((category, index) => (
         <input
@@ -36,6 +38,8 @@ function NewLineForm() {
       >
         Criar nova linha
       </button>
+      <hr />
+      <br />
     </div>
   );
 }
