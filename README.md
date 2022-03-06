@@ -4,6 +4,7 @@
 
 Desafio Técnico para processo seletivo. Consiste em uma aplicação de receber arquivos CSV, gerando para o usuário uma tabela em que ele possa criar, deletar, atualizar os itens da tabela.
 
+
 ## Tecnologias Utilizadas
 
 #### :link: [React](https://pt-br.reactjs.org/docs/getting-started.html)
@@ -22,6 +23,7 @@ Desafio Técnico para processo seletivo. Consiste em uma aplicação de receber 
 -Instale as dependências, entrando na raiz dando `npm install`.
 
 -Para rodar a aplicação de `npm start`.
+
 
 ## Como utilizar
 

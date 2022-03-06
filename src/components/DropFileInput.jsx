@@ -78,7 +78,7 @@ function DropFileInput() {
               className='drop-file-preview__item__del'
               onClick={() => fileRemove()}
             >
-              x
+              X
             </span>
           </div>
           <button
